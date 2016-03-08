@@ -12,7 +12,7 @@ class EmailtemplatesController < ApplicationController
    if(@emailtemplate.save)
      redirect_to emailtemplates_path(@emailtemplate)  
    else
-     redirect_to new_emailtemplates_path
+     render 'new'
    end
    
   
