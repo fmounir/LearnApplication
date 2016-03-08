@@ -1,0 +1,23 @@
+ <div class='container' style="margin:100px">
+      <div class="row">
+<h2> New Email Template </h2>
+<%= form_for @emailtemplate do |f| %>
+    <div>
+        <%= f.label :key %>
+        <%= f.text_field :key %>
+    </div>
+    
+    <div>
+        <%= f.label :subject %>
+        <%= f.text_field :subject %>
+    </div>
+    
+    <div>
+        <%= f.label :body %>
+        <%= f.text_area :body %>
+    </div>
+    
+    <%= f.submit %>
+<% end %>
+</div>
+</div>

@@ -8,10 +8,14 @@ class EmailtemplatesController < ApplicationController
   
   def create
    @emailtemplate = Emailtemplate.new
-   @emailtemplate.title = params(:title)
-   @emailtemplate.body = params(:body)
-   @emailtemplate.key = params(:key)
-   @emailtemplate.save
+   @emailtemplate.subject = params[:subject]
+   @emailtemplate.body = params[:body]
+   @emailtemplate.key = params[:key]
+   
+   if(@emailtemplate.save)
+     redirect_to emailtemplates_path(@emailtemplate)    
+   end
+  
   end
   
   def destroy
