@@ -11,6 +11,7 @@ class EmailtemplatesController < ApplicationController
    @emailtemplate = Emailtemplate.new(params.require(:emailtemplate).permit(:key, :subject,:body) )
   
    if(@emailtemplate.save)
+     UserMailer.welcome_email(@emailtemplate).deliver_now
      redirect_to emailtemplates_path(@emailtemplate)  
    else
      render 'new'
