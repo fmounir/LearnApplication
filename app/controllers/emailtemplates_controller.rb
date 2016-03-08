@@ -1,5 +1,6 @@
 class EmailtemplatesController < ApplicationController
   def index
+    @emailtemplates = Emailtemplate.all
   end
   
   def new
@@ -16,6 +17,10 @@ class EmailtemplatesController < ApplicationController
    end
    
   
+  end
+  
+  def show
+    @emailtemplate = Emailtemplate.find(params[:format])
   end
   
   def destroy
