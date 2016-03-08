@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
  
    resource :emailtemplates     
- 
+   resource :home_page
 
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.

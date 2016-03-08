@@ -7,14 +7,14 @@ class EmailtemplatesController < ApplicationController
   end
   
   def create
-   @emailtemplate = Emailtemplate.new
-   @emailtemplate.subject = params[:subject]
-   @emailtemplate.body = params[:body]
-   @emailtemplate.key = params[:key]
-   
+   @emailtemplate = Emailtemplate.new(params.require(:emailtemplate).permit(:key, :subject,:body) )
+  
    if(@emailtemplate.save)
-     redirect_to emailtemplates_path(@emailtemplate)    
+     redirect_to emailtemplates_path(@emailtemplate)  
+   else
+     redirect_to new_emailtemplates_path
    end
+   
   
   end
   
