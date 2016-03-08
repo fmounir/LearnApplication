@@ -3,6 +3,6 @@
 Email Template (  <%= link_to emailtemplate.key , url: emailtemplates_path %> ) <br/>
 Subject: <%= emailtemplate.subject %><br/>
 Body: <%= emailtemplate.body %><br/>
-
+<%= link_to "edit email template" , url: edit_emailtemplates_path %>
 <hr/>
 <%end%>
