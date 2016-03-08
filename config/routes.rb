@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  get 'emailtemplates/index'
-
-  get 'emailtemplate/index'
+ 
+   resource :emailtemplates     
+ 
 
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
