@@ -1,25 +1,8 @@
  <div class='container' style="margin:100px">
-    <% @emailtemplates.each do |emailtemplate| %> 
-      <div class="row">
-<h2> Email Template ( <%= @emailtemplate.key %> ) </h2>
+<%= @emailtemplates.each do |emailtemplate| %> 
+Email Template (  <%= link_to emailtemplate.key , url: emailtemplates_path %> ) <br/>
+Subject: <%= emailtemplate.subject %><br/>
+Body: <%= emailtemplate.body %><br/>
 
-  
-  <div class="form-group">
-    <label for="exampleInputEmail1">
-        Subject:
-    </label>
-    
-    <%= @emailtemplate.subject %>
-  
-  </div>
-  
-    <div class="form-group">
-    <label for="exampleInputEmail1">
-       Body:
-    </label>
-    
-    <%= @emailtemplate.body %>
-  
-  </div>
-  
-  <%end%>
+<hr/>
+<%end%>
