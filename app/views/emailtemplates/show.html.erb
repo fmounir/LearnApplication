@@ -21,3 +21,9 @@
   
   </div>
   
+  <div>
+    <%= link_to 'edit' ,  edit_emailtemplate_path(@emailtemplate.id) %>
+    <%= link_to 'destroy', emailtemplate_path(@emailtemplate.id) , method: :delete , data: {confirm: "are you sure you want to delete ?"} %>
+    <%= link_to 'all' , emailtemplates_path %>
+  </div>
+  

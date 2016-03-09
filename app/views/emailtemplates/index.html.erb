@@ -1,8 +1,14 @@
- <div class='container' style="margin:100px">
+
+<div class='container' style="margin:100px">
+<div style='margin-left:1000px!important'>
+<%= link_to 'Add New + ' , new_emailtemplate_path %> 
+<br\>
+</div>
 <%= @emailtemplates.each do |emailtemplate| %> 
 Email Template (  <%= link_to emailtemplate.key , emailtemplate %> ) <br/>
 Subject: <%= emailtemplate.subject %><br/>
 Body: <%= emailtemplate.body %><br/>
-<%= link_to "edit email template" ,  edit_emailtemplate_path(emailtemplate.id) %>
+  <%= link_to 'edit' ,  edit_emailtemplate_path(emailtemplate.id) %>
+    <%= link_to 'destroy', emailtemplate_path(emailtemplate.id) , method: :delete , data: {confirm: "are you sure you want to delete ?"} %>
 <hr/>
 <%end%>

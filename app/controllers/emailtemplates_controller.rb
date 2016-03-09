@@ -1,7 +1,4 @@
 class EmailtemplatesController < ApplicationController
-  def index
-    @emailtemplates = Emailtemplate.all
-  end
   
   def new
     @emailtemplate = Emailtemplate.new
@@ -19,9 +16,17 @@ class EmailtemplatesController < ApplicationController
    
   end
   
+  def show
+    @emailtemplate = Emailtemplate.find(params[:id])
+  end
+  
+  
+  def index
+    @emailtemplates = Emailtemplate.all
+  end
+  
   def edit
     @emailtemplate = Emailtemplate.find(params[:id])
-    
   end
   
   def update
@@ -36,11 +41,14 @@ class EmailtemplatesController < ApplicationController
     end
   end
   
-  def show
-    @emailtemplate = Emailtemplate.find(params[:id])
-  end
   
   def destroy
+    @emailtemplate = Emailtemplate.find(params[:id])
+    if(@emailtemplate.destroy)
+        redirect_to emailtemplates_path
+        else
+        render 'show'
+    end
   end
   
 end
