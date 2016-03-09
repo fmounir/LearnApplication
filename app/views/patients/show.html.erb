@@ -1,0 +1,77 @@
+ <div class='container' style="margin:100px">
+      <div class="row">
+<h2> Patient Record ( <%= @patient.patient_name %> ) </h2>
+
+Age: <%= @patient.age %> <br/>
+
+Telephone number: <%= @patient.telephone_number %> <br/>
+
+<h3>
+    Patient appointments
+</h3>
+
+<table>
+
+<th>
+    <tr>
+        <td>
+            Start date
+        </td>
+        <td>
+            End date
+        </td>
+        <td>
+            Physician
+        </td>    
+    </tr>
+</th>
+
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">Add Appointment</button>
+
+<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+     <div style="padding:30px">
+      <h4>
+            Add Appointment
+       </h4>
+       <div>
+            <%= form_for ([@patient, @patient.appointments.build]) do |f| %>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">
+                        <%= f.label :start_date %>
+                        <%= f.date_field :start_date , class:'form-control',placeholder:'Start date'%>
+                </div> 
+                
+                 <div class="form-group">
+                    <label for="exampleInputEmail1">
+                        <%= f.label :end_date %>
+                        <%= f.date_field :end_date , class:'form-control',placeholder:'End date'%>
+                </div>
+                
+                <div class="form-group">
+                    <label for="exampleInputEmail1">
+                        <%= f.label :end_date %>
+                        <%= f.select :physicians , class:'form-control',placeholder:'End date'%>
+                </div>
+            <% end %>
+       </div>
+      </div> 
+    </div>
+  </div>
+</div>
+
+<% @patient.appointments.each do |appointment| %>
+    <tr>
+        <td>
+            <%= appointment.start_date %>       
+        </td>
+        <td>
+            <%= appointment.end_date %>
+        </td>
+        <td>
+             <%= appointment.physician %>
+        </td>        
+    </tr>
+<% end %>
+</table>
