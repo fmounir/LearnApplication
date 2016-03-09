@@ -1,5 +1,15 @@
 Rails.application.routes.draw do
  
+   resource :patients do
+    resource :physicians
+   end
+   
+   resource :physicians do
+    resource :patients
+   end
+   
+   resource :physicians
+ 
    resource :emailtemplates     
    resource :home_page
    
