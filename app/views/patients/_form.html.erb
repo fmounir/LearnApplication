@@ -1,0 +1,25 @@
+<%= form_for @patient do |f| %>
+
+<div class="form-group">
+    <label for="exampleInputEmail1">
+        <%= f.label :patient_name %>
+    </label>
+        <%= f.text_field :patient_name , class:'form-control',placeholder:'Patient name'%>
+</div>    
+
+<div class="form-group">
+    <label for="exampleInputEmail1">
+        <%= f.label :age %>
+    </label>
+        <%= f.number_field :age , class: 'form-control', placeholder: 'Age' %>
+</div>  
+
+<div class="form-group">
+    <label for="exampleInputEmail1">
+        <%= f.label :telephone_number %>
+    </label>
+        <%= f.telephone_field :telephone_number , class: 'form-control' , placeholder: 'Telephone number' %>
+</div>  
+
+<%= f.submit 'Submit' , class: 'btn btn-default'%>
+<%end%>

@@ -10,8 +10,6 @@ Rails.application.routes.draw do
     resources :appointments
    end
    
-   resources :physicians
- 
    resources :emailtemplates     
    resources :home_page
    
