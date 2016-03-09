@@ -17,7 +17,6 @@ class EmailtemplatesController < ApplicationController
      render 'new'
    end
    
-  
   end
   
   def edit
