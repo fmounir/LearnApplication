@@ -19,15 +19,15 @@ def show
 end 
 
 def index 
-    @allPatients = Patient.all
+    @allpatients = Patient.all
 end
 
 def edit
-    @patient = Patient.find(:id)
+    @patient = Patient.find(params[:id])
 end
 
 def update
-    @patient = Patient.find(:id)
+    @patient = Patient.find(params[:id])
     @patient.update(params.require(:patient).permit(:patient_name , :age , :telephone_number))
     
     if(@patient.save)
@@ -39,7 +39,7 @@ def update
 end 
 
 def destroy
-    @patient = Patient.find(:id)
+    @patient = Patient.find(params[:id])
     if(@patient.destroy)
         redirect_to patients_path
         else

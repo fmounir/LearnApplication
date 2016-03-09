@@ -1,0 +1,21 @@
+<div class='container' style="margin:100px">
+<div style='margin-left:1000px!important'>
+<%= link_to 'Add New + ' , new_patient_path %> 
+<br\>
+</div>
+
+<% @allpatients.each do |patient| %>
+Patient name:
+<%= patient.patient_name %> <br/>
+Age:
+<%= patient.age %><br/>
+Telephone number:
+<%= patient.telephone_number %><br/>
+Creation date: 
+<%= patient.created_at %>
+
+<br/>
+<%= link_to 'edit' , edit_patient_path(patient.id)%>
+<%= link_to 'destroy', patient_path(patient.id) , method: :delete , data: {confirm: "are you sure you want to delete this patient with all appointments ?"} %>
+<hr/>
+<%end%>

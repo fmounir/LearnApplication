@@ -4,7 +4,7 @@
 <%= link_to 'Add New + ' , new_emailtemplate_path %> 
 <br\>
 </div>
-<%= @emailtemplates.each do |emailtemplate| %> 
+<% @emailtemplates.each do |emailtemplate| %> 
 Email Template (  <%= link_to emailtemplate.key , emailtemplate %> ) <br/>
 Subject: <%= emailtemplate.subject %><br/>
 Body: <%= emailtemplate.body %><br/>
