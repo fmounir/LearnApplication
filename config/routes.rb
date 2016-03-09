@@ -1,19 +1,19 @@
 Rails.application.routes.draw do
  
-   resource :patients do
-    resource :physicians
-    resource :appointments
+   resources :patients do
+    resources :physicians
+    resources :appointments
    end
    
-   resource :physicians do
-    resource :patients
-    resource :appointments
+   resources :physicians do
+    resources :patients
+    resources :appointments
    end
    
-   resource :physicians
+   resources :physicians
  
-   resource :emailtemplates     
-   resource :home_page
+   resources :emailtemplates     
+   resources :home_page
    
    get 'emailtemplates/index' => 'emailtemplates#index'
   devise_for :users
