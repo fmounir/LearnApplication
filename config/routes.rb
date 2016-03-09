@@ -2,10 +2,12 @@ Rails.application.routes.draw do
  
    resource :patients do
     resource :physicians
+    resource :appointments
    end
    
    resource :physicians do
     resource :patients
+    resource :appointments
    end
    
    resource :physicians
