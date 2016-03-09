@@ -16,6 +16,7 @@ end
 
 def show
     @patient = Patient.find(params[:id])
+    @physicians =  Physician.all
 end 
 
 def index 

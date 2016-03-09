@@ -20,15 +20,15 @@ def show
 end 
 
 def index 
-    @allPhysicians = Physician.all
+    @allphysicians = Physician.all
 end
 
 def edit
-    @physician = Physician.find(:id)
+    @physician = Physician.find(params[:id])
 end
 
 def update
-    @physician = Physician.find(:id)
+    @physician = Physician.find(params[:id])
     @physician.update(params.require(:physician).permit(:physician_name , :telephone_number))
     
     if(@physician.save)
@@ -40,7 +40,7 @@ def update
 end 
 
 def destroy
-    @physician = Physician.find(:id)
+    @physician = Physician.find(params[:id])
     if(@physician.destroy)
         redirect_to physicians_path
         else

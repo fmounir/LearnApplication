@@ -51,9 +51,10 @@ Telephone number: <%= @patient.telephone_number %> <br/>
                 
                 <div class="form-group">
                     <label for="exampleInputEmail1">
-                        <%= f.label :end_date %>
-                        <%= f.select :physicians , class:'form-control',placeholder:'End date'%>
+                        <%= f.label :physician %>
+                        <%= select_tag 'physicians' , options_from_collection_for_select(@physicians , 'id','physician_name') , class: 'form-control' , placeholder:'select physician'%>
                 </div>
+                    <%= f.submit 'Submit' , class: 'btn btn-default'%>
             <% end %>
        </div>
       </div> 

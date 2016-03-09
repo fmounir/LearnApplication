@@ -1,0 +1,9 @@
+<%= form_for @physician do |f| %>
+    <%= f.label :physician_name  %>
+    <%= f.text_field :physician_name , class: 'form-control' , placeholder: 'physician name' %> <br/>
+    <%= f.label :telephone_number %>
+    <%= f.text_field :telephone_number , class: 'form-control' , placeholder: 'telephone number' %>
+    <br/>
+    <%= f.submit 'Submit' , class: 'btn btn-default'%>
+    <hr/>
+<% end %>
