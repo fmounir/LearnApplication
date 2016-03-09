@@ -1,8 +1,8 @@
  <div class='container' style="margin:100px">
 <%= @emailtemplates.each do |emailtemplate| %> 
-Email Template (  <%= link_to emailtemplate.key , url: emailtemplates_path %> ) <br/>
+Email Template (  <%= link_to emailtemplate.key , emailtemplate %> ) <br/>
 Subject: <%= emailtemplate.subject %><br/>
 Body: <%= emailtemplate.body %><br/>
-<%= link_to "edit email template" , url: edit_emailtemplates_path %>
+<%= link_to "edit email template" ,  edit_emailtemplate_path(emailtemplate.id) %>
 <hr/>
 <%end%>

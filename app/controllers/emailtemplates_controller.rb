@@ -20,8 +20,25 @@ class EmailtemplatesController < ApplicationController
   
   end
   
+  def edit
+    @emailtemplate = Emailtemplate.find(params[:id])
+    
+  end
+  
+  def update
+    @emailtemplate = Emailtemplate.find(params[:id])
+    @emailtemplate.key = params.require(:emailtemplate)[:key]
+    @emailtemplate.subject = params.require(:emailtemplate)[:subject]
+    @emailtemplate.body = params.require(:emailtemplate)[:body]
+    if(@emailtemplate.save) 
+       redirect_to @emailtemplate
+       else
+        render 'edit'      
+    end
+  end
+  
   def show
-    @emailtemplate = Emailtemplate.find(params[:format])
+    @emailtemplate = Emailtemplate.find(params[:id])
   end
   
   def destroy
