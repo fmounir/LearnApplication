@@ -11,7 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160308091302) do
+ActiveRecord::Schema.define(version: 20160309122623) do
+
+# Could not dump table "appointments" because of following NoMethodError
+#   undefined method `[]' for nil:NilClass
 
   create_table "emailtemplates", force: :cascade do |t|
     t.string   "key"
@@ -19,6 +22,21 @@ ActiveRecord::Schema.define(version: 20160308091302) do
     t.text     "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "patients", force: :cascade do |t|
+    t.string   "patient_name"
+    t.integer  "age"
+    t.string   "telephone_number"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
+  create_table "physicians", force: :cascade do |t|
+    t.string   "physician_name"
+    t.string   "telephone_number"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
   end
 
   create_table "users", force: :cascade do |t|
