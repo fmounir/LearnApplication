@@ -6,3 +6,38 @@ Physician name: <%= @physician.physician_name %>
 <br/>
 
 Telephone number: <%= @physician.telephone_number %> <br/>
+<br/>
+ <h4>
+   My Appointments
+ </h4>
+<div style="padding-top:20px">
+<table width="60%">
+
+<th>
+    <tr>
+        <td>
+            Start date
+        </td>
+        <td>
+            End date
+        </td>
+        <td>
+            Patient name
+        </td>    
+    </tr>
+</th>
+<% @physician.appointments.each do |appointment| %>
+    <tr>
+        <td width="20%">
+            <%= appointment.start_date %>       
+        </td>
+        <td  width="20%">
+            <%= appointment.end_date %>
+        </td>
+        <td width="20%">
+             <%= appointment.patient.patient_name %>
+        </td>        
+    </tr>
+<% end %>
+</table>
+</div>

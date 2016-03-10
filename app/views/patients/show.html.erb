@@ -10,22 +10,7 @@ Telephone number: <%= @patient.telephone_number %> <br/>
     Patient appointments
 </h3>
 
-<table>
-
-<th>
-    <tr>
-        <td>
-            Start date
-        </td>
-        <td>
-            End date
-        </td>
-        <td>
-            Physician
-        </td>    
-    </tr>
-</th>
-
+<br/>
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">Add Appointment</button>
 
 <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
@@ -62,17 +47,39 @@ Telephone number: <%= @patient.telephone_number %> <br/>
   </div>
 </div>
 
-<%= @patient.appointments.each do |appointment| %>
+<div style="padding-top:40px">
+<table width="80%">
+
+<th>
     <tr>
         <td>
+            Start date
+        </td>
+        <td>
+            End date
+        </td>
+        <td>
+            Physician
+        </td>  
+        <td>
+        </td>      
+    </tr>
+</th>
+<% @patient.appointments.each do |appointment| %>
+    <tr>
+        <td width="20%">
             <%= appointment.start_date %>       
         </td>
-        <td>
+        <td  width="20%">
             <%= appointment.end_date %>
         </td>
-        <td>
+        <td width="20%">
              <%= appointment.physician %>
-        </td>        
+        </td>
+         <td width="20%">
+             <%= link_to 'cancel appointment' ,  ([@patient , appointment]) , method: :delete , data: {confirm:"are you sure you want to cancel this appointment ?"} %>
+        </td>          
     </tr>
 <% end %>
 </table>
+</div>

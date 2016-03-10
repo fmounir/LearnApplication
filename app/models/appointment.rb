@@ -4,5 +4,5 @@ class Appointment < ActiveRecord::Base
     
     validates :start_date , presence: :true
     validates :end_date , presence: :true
-    validates :physician , presence: :true
+    validates :physician_id , presence: :true
 end
