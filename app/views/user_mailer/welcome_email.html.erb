@@ -4,14 +4,11 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-    <h1>Welcome to example.com, <%= @emailtemplate.key %></h1>
+    <p>Welcome  <%= @emailtemplate.subject %></p>
     <p>
-      You have successfully signed up to example.com,
-      your username is: <%= @emailtemplate.subject %>.<br>
+      You have successfully signed up to our website,
     </p>
-    <p>
    <%= @emailtemplate.body %>
-    </p>
     <p>Thanks for joining and have a great day!</p>
   </body>
 </html>

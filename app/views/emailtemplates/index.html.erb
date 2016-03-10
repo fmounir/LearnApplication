@@ -6,7 +6,7 @@
 </div>
 <% @emailtemplates.each do |emailtemplate| %> 
 Email Template (  <%= link_to emailtemplate.key , emailtemplate %> ) <br/>
-Subject: <%= emailtemplate.subject %><br/>
+User name: <%= emailtemplate.subject %><br/>
 Body: <%= emailtemplate.body %><br/>
   <%= link_to 'edit' ,  edit_emailtemplate_path(emailtemplate.id) %>
     <%= link_to 'destroy', emailtemplate_path(emailtemplate.id) , method: :delete , data: {confirm: "are you sure you want to delete ?"} %>

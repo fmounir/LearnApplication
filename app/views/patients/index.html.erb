@@ -6,7 +6,7 @@
 
 <% @allpatients.each do |patient| %>
 Patient name:
-<%= patient.patient_name %> <br/>
+<%= link_to patient.patient_name , patient   %> <br/>
 Age:
 <%= patient.age %><br/>
 Telephone number:

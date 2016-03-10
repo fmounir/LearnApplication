@@ -6,7 +6,7 @@
 
 <% @allphysicians.each do |physician| %>
 Physician name:
-<%= physician.physician_name %> <br/>
+<%= link_to physician.physician_name , physician %> <br/>
 Telephone number:
 <%= physician.telephone_number %><br/>
 Creation date: 
