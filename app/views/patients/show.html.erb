@@ -66,6 +66,7 @@ Telephone number: <%= @patient.telephone_number %> <br/>
     </tr>
 </th>
 <% @patient.appointments.each do |appointment| %>
+<% if (!appointment.physician.nil?) %>
     <tr>
         <td width="20%">
             <%= appointment.start_date %>       
@@ -74,12 +75,15 @@ Telephone number: <%= @patient.telephone_number %> <br/>
             <%= appointment.end_date %>
         </td>
         <td width="20%">
-             <%= appointment.physician %>
+        
+          <%=  appointment.physician.physician_name %>
+        
         </td>
          <td width="20%">
              <%= link_to 'cancel appointment' ,  ([@patient , appointment]) , method: :delete , data: {confirm:"are you sure you want to cancel this appointment ?"} %>
         </td>          
     </tr>
+<% end %>
 <% end %>
 </table>
 </div>
