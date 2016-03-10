@@ -66,7 +66,7 @@ Telephone number: <%= @patient.telephone_number %> <br/>
     </tr>
 </th>
 <% @patient.appointments.each do |appointment| %>
-<% if (!appointment.physician.nil?) %>
+
     <tr>
         <td width="20%">
             <%= appointment.start_date %>       
@@ -75,7 +75,7 @@ Telephone number: <%= @patient.telephone_number %> <br/>
             <%= appointment.end_date %>
         </td>
         <td width="20%">
-        
+        <% if (!appointment.physician.nil?) %>
           <%=  appointment.physician.physician_name %>
         
         </td>
