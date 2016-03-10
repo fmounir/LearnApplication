@@ -1,4 +1,4 @@
- <div class='container' style="margin:100px">
+<div class='container' style="margin:100px">
       <div class="row">
 <h2> Patient Record ( <%= @patient.patient_name %> ) </h2>
 
@@ -62,7 +62,7 @@ Telephone number: <%= @patient.telephone_number %> <br/>
   </div>
 </div>
 
-<% @patient.appointments.each do |appointment| %>
+<%= @patient.appointments.each do |appointment| %>
     <tr>
         <td>
             <%= appointment.start_date %>       
